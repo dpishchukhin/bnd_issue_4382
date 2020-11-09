@@ -1,0 +1,2 @@
+Any jar in this folder will be added to the classpath by the JVM and will be
+available to the Main class.  Custom locking libraries can be added here.

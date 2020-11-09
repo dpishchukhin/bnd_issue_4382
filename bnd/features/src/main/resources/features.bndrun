@@ -1,0 +1,35 @@
+-runfw: org.apache.felix.framework;version=6.0.3
+-runee: JavaSE-1.8
+-runprovidedcapabilities: ${native_capability}
+-resolve.effective: resolve,active;skip:="osgi.service"
+-runsystempackages:\
+    sun.misc
+
+-runproperties: \
+    org.osgi.framework.bootdelegation=com.sun.*,sun.*,\
+    org.osgi.framework.startlevel.beginning=10,\
+	felix.fileinstall.log.level=3,\
+	felix.fileinstall.log.default=jul,\
+	felix.fileinstall.filter=.*\\.(cfg|config),\
+    felix.fileinstall.noInitialDelay=true,\
+	felix.fileinstall.enableConfigSave=false
+
+java-api-bundles: \
+    osgi.identity;filter:='(osgi.identity=jaxb-api)',\
+    osgi.identity;filter:='(osgi.identity=javax.annotation-api)',\
+    osgi.identity;filter:='(osgi.identity=com.sun.activation.javax.activation)'
+
+
+osgi-core-bundles: \
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.scr)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.configadmin)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.metatype)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.fileinstall)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.coordinator)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.felix.eventadmin)'
+
+logging-bundles: \
+    osgi.identity;filter:='(osgi.identity=jcl.over.slf4j)',\
+    osgi.identity;filter:='(osgi.identity=log4j.over.slf4j)',\
+    osgi.identity;filter:='(osgi.identity=jul.to.slf4j)',\
+    osgi.identity;filter:='(osgi.identity=logback-filter)'

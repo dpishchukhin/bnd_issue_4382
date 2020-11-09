@@ -1,0 +1,4 @@
+Fragment-Host: ch.qos.logback.classic
+
+Import-Package:
+Export-Package:
